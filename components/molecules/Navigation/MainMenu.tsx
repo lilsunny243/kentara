@@ -5,6 +5,11 @@ import logo from "/public/img/mainLogo.png";
 import { motion } from "framer-motion";
 import { FaUser, FaSearch, FaHeart, FaCartPlus } from "react-icons/fa";
 
+type Icon = {
+  id: number;
+  url: any;
+};
+
 type Menu = {
   id: number;
   menu: string;
@@ -14,15 +19,30 @@ type Props = {};
 
 const MainMenu = (menuList: Props) => {
   const menu: Menu[] = [
-    {
-      id: 1,
-      menu: "Home",
-      link: "/",
-    },
+    { id: 1, menu: "Home", link: "/" },
     { id: 2, menu: "Products", link: "/" },
     { id: 3, menu: "About Us", link: "/" },
     { id: 4, menu: "Articles", link: "/" },
     { id: 5, menu: "Contact", link: "/" },
+  ];
+
+  const icon: Icon[] = [
+    {
+      id: 1,
+      url: { FaUser },
+    },
+    {
+      id: 2,
+      url: { FaSearch },
+    },
+    {
+      id: 3,
+      url: { FaHeart },
+    },
+    {
+      id: 4,
+      url: { FaCartPlus },
+    },
   ];
 
   return (
@@ -36,7 +56,7 @@ const MainMenu = (menuList: Props) => {
             viewport={{ once: true }}
             className="w-[120px]"
           >
-            <Image src={logo} alt="Kentara" />
+            <Image priority src={logo} alt="Kentara" />
           </motion.figure>
           <nav>
             <ul className="flex font-medium text-[14px] gap-5 uppercase">
