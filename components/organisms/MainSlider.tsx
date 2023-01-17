@@ -1,8 +1,12 @@
 import React from "react";
-// core version + navigation, pagination modules:
-import { Navigation, Pagination } from "swiper";
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, {
+  Autoplay,
+  Navigation,
+  Pagination,
+  Scrollbar,
+  A11y,
+} from "swiper";
 // import Swiper and modules styles
 import "swiper/css";
 import "swiper/css/navigation";
@@ -14,6 +18,7 @@ import slide1 from "/public/img/slide1.jpg";
 type Props = {};
 
 const MainSlider = (props: Props) => {
+  SwiperCore.use([Autoplay, Navigation, Pagination, Scrollbar, A11y]);
   const slider = [
     {
       id: 1,
@@ -21,7 +26,7 @@ const MainSlider = (props: Props) => {
         "https://klbtheme.com/clotya/wp-content/uploads/2022/05/slider-06.jpg",
       tag: "Winter 2022 Collection",
       title: " Valentine Paul Essentials Collection",
-      desc: "Lorem ipsum sit dolor amet...",
+      desc: "Light up your Valentine's Day with our exclusive candle promotion. Treat your loved one to the soothing scents and warm ambiance of our hand-poured candles. From now until February 14th, buy one candle and get the second 50% off",
       link: "/",
     },
     {
@@ -42,9 +47,8 @@ const MainSlider = (props: Props) => {
         clickable: true,
       }}
       autoplay={{
-        delay: 5000,
+        delay: 3000,
       }}
-      navigation
       modules={[Pagination]}
       loop={true}
       className="max-w-[1170px]"

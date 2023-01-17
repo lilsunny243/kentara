@@ -28,14 +28,14 @@ const MainSlides = ({ id, image, tag, title, desc, link }: any) => {
           alt={title}
         />
       </div>
-      <div className="absolute flex flex-col w-full gap-10 mt-16 ml-10">
+      <div className="absolute flex flex-col w-full gap-10 mt-12 ml-10">
         <div>
           <h3 className="text-[16px] font-medium uppercase">{tag}</h3>
           <h1 className="text-[72px] font-light w-7/12 leading-none">
             {title}
           </h1>
         </div>
-        <p className="text-[14px] font-thin">{desc}</p>
+        <p className="text-[14px] font-thin w-5/12">{desc}</p>
         <Link href={link}>
           <button className="font-medium flex items-center gap-5">
             Shop Collection
@@ -48,33 +48,5 @@ const MainSlides = ({ id, image, tag, title, desc, link }: any) => {
     </div>
   );
 };
-
-/* 
-<div className="relative max-w-[1200px] mx-auto flex flex-col w-full">
-      <div className="w-[1200px] -z-10 mx-auto bg-slate-400">
-        <Image className="w-full object-contain" src={slide1} alt="" />
-      </div>
-      <div className="absolute flex flex-col w-full gap-10 mt-16 ml-10">
-        <div>
-          <h3 className="text-[16px] font-medium uppercase">
-            Winter 2022 Collection
-          </h3>
-          <h1 className="text-[72px] font-light w-7/12 leading-none">
-            Valentine Paul Essentials Collection
-          </h1>
-        </div>
-        <p className="text-[14px] font-thin">Lorem ipsum sit dolor amet...</p>
-        <Link href="">
-          <button className="font-medium flex items-center gap-5">
-            Shop Collection
-            <span className="mt-[2px]">
-              <FaArrowCircleRight />
-            </span>
-          </button>
-        </Link>
-      </div>
-    </div>
-    
-    */
 
 export default MainSlides;
