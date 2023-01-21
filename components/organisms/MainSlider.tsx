@@ -13,8 +13,6 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import MainSlides from "../molecules/Slides/MainSlides";
 
-import slide1 from "/public/img/slide1.jpg";
-
 type Props = {};
 
 const MainSlider = (props: Props) => {

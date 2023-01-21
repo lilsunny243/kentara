@@ -1,10 +1,9 @@
 import Head from "next/head";
 import { Inter } from "@next/font/google";
 import Header from "@/components/organisms/Header";
-
-import slide1 from "/public/img/slide1.jpg";
-import slide2 from "/public/img/slide2.jpg";
 import MainSlider from "@/components/organisms/MainSlider";
+import FeaturedProducts from "@/components/organisms/FeaturedProducts";
+import NewCollection from "@/components/organisms/NewCollection";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,6 +18,8 @@ export default function Home() {
       </Head>
       <Header />
       <MainSlider />
+      <FeaturedProducts />
+      <NewCollection />
     </>
   );
 }

@@ -79,6 +79,7 @@ const MainMenu = (menuList: Props) => {
             initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.3 }}
+            viewport={{ once: true }}
           >
             <FaUser />
           </motion.span>
@@ -86,6 +87,7 @@ const MainMenu = (menuList: Props) => {
             initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.4 }}
+            viewport={{ once: true }}
           >
             <FaSearch />
           </motion.span>
@@ -93,6 +95,7 @@ const MainMenu = (menuList: Props) => {
             initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.5 }}
+            viewport={{ once: true }}
           >
             <FaHeart />
           </motion.span>
@@ -100,6 +103,7 @@ const MainMenu = (menuList: Props) => {
             initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.6 }}
+            viewport={{ once: true }}
           >
             <FaCartPlus />
           </motion.span>
