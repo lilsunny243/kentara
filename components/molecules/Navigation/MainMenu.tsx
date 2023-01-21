@@ -49,15 +49,17 @@ const MainMenu = (menuList: Props) => {
     <div className="w-full border-b-[1px] border-gray py-7">
       <div className="max-w-[1170px] flex items-center justify-between mx-auto">
         <div className="flex items-center gap-10">
-          <motion.figure
-            initial={{ opacity: 0, scale: 0 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1 }}
-            viewport={{ once: true }}
-            className="w-[120px]"
-          >
-            <Image priority src={logo} alt="Kentara" />
-          </motion.figure>
+          <Link href="/">
+            <motion.figure
+              initial={{ opacity: 0, scale: 0 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1 }}
+              viewport={{ once: true }}
+              className="w-[120px]"
+            >
+              <Image priority src={logo} alt="Kentara" />
+            </motion.figure>
+          </Link>
           <nav>
             <ul className="flex font-medium text-[16px] gap-5 uppercase">
               {menu.map((v: Menu, i) => (

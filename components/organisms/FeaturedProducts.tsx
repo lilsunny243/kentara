@@ -18,10 +18,10 @@ import { motion } from "framer-motion";
 
 type Props = {};
 
-const FeaturedProducts = ({ products }: any) => {
+const FeaturedProducts = ({ product }: any) => {
   SwiperCore.use([Autoplay, Navigation, Pagination, Scrollbar, A11y]);
 
-  const demo = [
+  const products: string[] | number[] | object[] = [
     {
       id: 1,
       image: "/",
@@ -75,7 +75,7 @@ const FeaturedProducts = ({ products }: any) => {
             loop={true}
             className="max-w-[1170px] h-[500px]"
           >
-            {demo.map((v: any, i: any) => (
+            {products.map((v: any, i: any) => (
               <SwiperSlide className="mr-[1px]" key={v.id}>
                 <motion.div
                   initial={{ opacity: 0, x: 100 }}
