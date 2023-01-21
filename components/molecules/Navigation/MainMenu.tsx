@@ -59,7 +59,7 @@ const MainMenu = (menuList: Props) => {
             <Image priority src={logo} alt="Kentara" />
           </motion.figure>
           <nav>
-            <ul className="flex font-medium text-[14px] gap-5 uppercase">
+            <ul className="flex font-medium text-[16px] gap-5 uppercase">
               {menu.map((v: Menu, i) => (
                 <motion.li
                   initial={{ opacity: 0, scale: 0, y: 50 }}

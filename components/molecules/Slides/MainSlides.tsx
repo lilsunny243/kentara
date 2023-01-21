@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { FaArrowCircleRight } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 import slide1 from "/public/img/slide2.jpg";
 
@@ -19,7 +20,12 @@ type Props = {};
 const MainSlides = ({ id, image, tag, title, desc, link }: any) => {
   return (
     <div className="relative max-w-[1200px] mx-auto flex flex-col w-full">
-      <div className="w-[1200px] -z-10 mx-auto bg-slate-400">
+      <motion.figure
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className="w-[1300px] h-[455px] -z-10 mx-auto"
+      >
         <Image
           className="w-full object-contain"
           width={1500}
@@ -27,15 +33,34 @@ const MainSlides = ({ id, image, tag, title, desc, link }: any) => {
           src={image}
           alt={title}
         />
-      </div>
+      </motion.figure>
       <div className="absolute flex flex-col w-full gap-10 mt-12 ml-10">
         <div>
-          <h3 className="text-[16px] font-medium uppercase">{tag}</h3>
-          <h1 className="text-[72px] font-light w-7/12 leading-none">
+          <motion.h3
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, delay: 0.2 }}
+            className="text-[16px] font-medium uppercase"
+          >
+            {tag}
+          </motion.h3>
+          <motion.h1
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, delay: 0.3 }}
+            className="text-[72px] font-light w-7/12 leading-none"
+          >
             {title}
-          </h1>
+          </motion.h1>
         </div>
-        <p className="text-[14px] font-thin w-5/12">{desc}</p>
+        <motion.p
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, delay: 0.4 }}
+          className="text-[14px] font-thin w-5/12"
+        >
+          {desc}
+        </motion.p>
         <Link href={link}>
           <button className="font-medium flex items-center gap-5">
             Shop Collection

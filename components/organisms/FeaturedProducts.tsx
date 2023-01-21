@@ -1,4 +1,3 @@
-import Image from "next/image";
 import React from "react";
 import ProductCards from "../molecules/Cards/ProductCards";
 import FeaturedHeader from "../molecules/Section/FeaturedHeader";
@@ -15,6 +14,7 @@ import SwiperCore, {
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { motion } from "framer-motion";
 
 type Props = {};
 
@@ -64,7 +64,7 @@ const FeaturedProducts = ({ products }: any) => {
     <section className="w-full mt-20">
       <div className="w-[1170px] mx-auto flex flex-col border-b-[1px] border-gray pb-28">
         <FeaturedHeader />
-        <div className="flex flex-row gap-8 ">
+        <div className="flex flex-row">
           <Swiper
             slidesPerView={4}
             pagination={{
@@ -75,15 +75,22 @@ const FeaturedProducts = ({ products }: any) => {
             loop={true}
             className="max-w-[1170px] h-[500px]"
           >
-            {demo.map((v: any) => (
-              <SwiperSlide key={v.id}>
-                <ProductCards
-                  productType={{
-                    image: v.image,
-                    productPrice: v.productPrice,
-                    productTitle: v.productTitle,
-                  }}
-                />
+            {demo.map((v: any, i: any) => (
+              <SwiperSlide className="mr-[1px]" key={v.id}>
+                <motion.div
+                  initial={{ opacity: 0, x: 100 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1, delay: i * 0.15 }}
+                >
+                  <ProductCards
+                    productType={{
+                      image: v.image,
+                      productPrice: v.productPrice,
+                      productTitle: v.productTitle,
+                    }}
+                  />
+                </motion.div>
               </SwiperSlide>
             ))}
           </Swiper>
