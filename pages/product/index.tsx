@@ -8,10 +8,6 @@ type Props = {};
 
 const index = (props: Props) => {
   const [count, setCount] = useState<number>(0);
-  const [state, setState] = useState<{ data: object; count: number }>({
-    data: {},
-    count: 0,
-  });
 
   const increment = (e: React.MouseEvent<HTMLButtonElement>): void => {
     e.preventDefault();
