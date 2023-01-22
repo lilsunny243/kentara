@@ -9,7 +9,6 @@ type Props = {};
 const Header = (props: Props) => {
   return (
     <header>
-      <TopMenu />
       <MainMenu />
     </header>
   );

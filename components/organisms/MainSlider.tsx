@@ -57,7 +57,7 @@ const MainSlider = (props: Props) => {
           clickable: true,
         }}
         autoplay={{
-          delay: 3000,
+          delay: 7000,
         }}
         modules={[Pagination]}
         loop={true}

@@ -47,7 +47,7 @@ const MainMenu = (menuList: Props) => {
 
   return (
     <div className="w-full border-b-[1px] border-gray py-7">
-      <div className="w-full px-5 flex items-center justify-between mx-auto">
+      <div className="w-full px-10 flex items-center justify-between mx-auto">
         <div className="flex items-center gap-10">
           <Link href="/">
             <motion.figure
@@ -55,30 +55,30 @@ const MainMenu = (menuList: Props) => {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1 }}
               viewport={{ once: true }}
-              className="w-[120px]"
+              className="w-[180px]"
             >
               <Image priority src={logo} alt="Kentara" />
             </motion.figure>
           </Link>
-          <nav>
-            <ul className="flex font-medium text-[16px] gap-5 uppercase">
-              {menu.map((v: Menu, i) => (
-                <motion.li
-                  initial={{ opacity: 0, scale: 0, y: 50 }}
-                  whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 1, delay: i * 0.1 }}
-                  key={v.id}
-                >
-                  <Link href={v.link}>{v.menu}</Link>
-                </motion.li>
-              ))}
-            </ul>
-          </nav>
         </div>
+        <nav>
+          <ul className="flex font-medium text-[16px] gap-16 uppercase">
+            {menu.map((v: Menu, i) => (
+              <motion.li
+                initial={{ opacity: 0, scale: 0, y: 50 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1, delay: i * 0.1 }}
+                key={v.id}
+              >
+                <Link href={v.link}>{v.menu}</Link>
+              </motion.li>
+            ))}
+          </ul>
+        </nav>
         <div className="flex gap-5">
           <motion.span
-            initial={{ opacity: 0, x: 100 }}
+            initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.3 }}
             viewport={{ once: true }}
@@ -86,7 +86,7 @@ const MainMenu = (menuList: Props) => {
             <FaUser />
           </motion.span>
           <motion.span
-            initial={{ opacity: 0, x: 100 }}
+            initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.4 }}
             viewport={{ once: true }}
@@ -94,7 +94,7 @@ const MainMenu = (menuList: Props) => {
             <FaSearch />
           </motion.span>
           <motion.span
-            initial={{ opacity: 0, x: 100 }}
+            initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.5 }}
             viewport={{ once: true }}
@@ -102,7 +102,7 @@ const MainMenu = (menuList: Props) => {
             <FaHeart />
           </motion.span>
           <motion.span
-            initial={{ opacity: 0, x: 100 }}
+            initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.6 }}
             viewport={{ once: true }}

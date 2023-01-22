@@ -34,7 +34,7 @@ const MainSlides = ({ id, image, tag, title, desc, link }: any) => {
           alt={title}
         />
       </motion.figure>
-      <div className="absolute flex flex-col w-full gap-10 mt-12 ml-10">
+      <div className="absolute flex flex-col w-full mt-24 ml-12 gap-10">
         <div>
           <motion.h3
             initial={{ opacity: 0, x: 100 }}
