@@ -19,12 +19,12 @@ type Props = {};
 
 const MainSlides = ({ id, image, tag, title, desc, link }: any) => {
   return (
-    <div className="relative max-w-[1200px] mx-auto flex flex-col w-full">
+    <div className="relative w-full mx-auto flex flex-col ">
       <motion.figure
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className="w-[1300px] h-[455px] -z-10 mx-auto"
+        className="w-full -z-10 mx-auto"
       >
         <Image
           className="w-full object-contain"

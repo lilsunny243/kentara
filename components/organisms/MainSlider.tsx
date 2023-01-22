@@ -48,6 +48,7 @@ const MainSlider = (props: Props) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 1 }}
+      className="w-full bg-slate-500"
     >
       <Swiper
         slidesPerView={1}
@@ -60,7 +61,7 @@ const MainSlider = (props: Props) => {
         }}
         modules={[Pagination]}
         loop={true}
-        className="max-w-[1170px]"
+        className="w-full"
       >
         {slider.map((v, i) => (
           <SwiperSlide key={i}>

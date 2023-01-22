@@ -9,7 +9,7 @@ type Props = {};
 const TopMenu = (props: Props) => {
   return (
     <div className="w-full border-b-[1px] border-gray py-3">
-      <div className="flex items-center justify-between max-w-[1170px] mx-auto">
+      <div className="flex items-center justify-between w-full px-5 mx-auto">
         <motion.div
           initial={{ opacity: 0, x: -100 }}
           whileInView={{ opacity: 1, x: 0 }}

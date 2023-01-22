@@ -47,7 +47,7 @@ const MainMenu = (menuList: Props) => {
 
   return (
     <div className="w-full border-b-[1px] border-gray py-7">
-      <div className="max-w-[1170px] flex items-center justify-between mx-auto">
+      <div className="w-full px-5 flex items-center justify-between mx-auto">
         <div className="flex items-center gap-10">
           <Link href="/">
             <motion.figure
