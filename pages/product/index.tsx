@@ -7,20 +7,6 @@ import React, { useState } from "react";
 type Props = {};
 
 const index = (props: Props) => {
-  const [count, setCount] = useState<number>(0);
-
-  const increment = (e: React.MouseEvent<HTMLButtonElement>): void => {
-    e.preventDefault();
-    setCount((prevCount) => prevCount + 1);
-  };
-
-  const decrement = (e: any): void => {
-    e.preventDefault();
-    if (count !== 0) {
-      setCount((prevCount) => prevCount - 1);
-    }
-  };
-
   const size: object[] = [
     {
       id: 1,
@@ -103,23 +89,9 @@ const index = (props: Props) => {
 
             <div className="flex gap-5 mt-10">
               <div className="flex gap-3 border-[1px] h-[50px] w-[120px] items-center justify-between px-5 ">
-                <button
-                  className="font-bold text-[20px]"
-                  onClick={(e) => {
-                    decrement(e);
-                  }}
-                >
-                  -
-                </button>
-                <span>{count == 0 ? "0" : count}</span>
-                <button
-                  className="font-bold text-[20px]"
-                  onClick={(e) => {
-                    increment(e);
-                  }}
-                >
-                  +
-                </button>
+                <button className="font-bold text-[20px]">-</button>
+                <span></span>
+                <button className="font-bold text-[20px]">+</button>
                 {/* <span>{count != 0 && count}</span> */}
               </div>
               <button className="h-[50px] w-[200px] rounded-md bg-black text-white ">
