@@ -1,10 +1,54 @@
+import Breadchumb from "@/components/molecules/Section/Breadchumb";
 import Header from "@/components/organisms/Header";
 import Head from "next/head";
-import React from "react";
+import Image from "next/image";
+import React, { useState } from "react";
 
 type Props = {};
 
 const index = (props: Props) => {
+  const [count, setCount] = useState<number>(0);
+  const [state, setState] = useState<{ data: object; count: number }>({
+    data: {},
+    count: 0,
+  });
+
+  const increment = (e: React.MouseEvent<HTMLButtonElement>): void => {
+    e.preventDefault();
+    setCount((prevCount) => prevCount + 1);
+  };
+
+  const decrement = (e: any): void => {
+    e.preventDefault();
+    if (count !== 0) {
+      setCount((prevCount) => prevCount - 1);
+    }
+  };
+
+  const size: object[] = [
+    {
+      id: 1,
+      name: "Mini",
+    },
+    {
+      id: 2,
+      name: "Tall",
+    },
+    { id: 3, name: "Venti" },
+  ];
+
+  const type: object[] = [
+    {
+      id: 1,
+      name: "Lavender",
+    },
+    {
+      id: 2,
+      name: "Apple",
+    },
+    { id: 3, name: "Palm Tree" },
+  ];
+
   return (
     <>
       <Head>
@@ -14,6 +58,91 @@ const index = (props: Props) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
+      <Breadchumb />
+
+      <section className="flex flex-col max-w-[1170px] mx-auto">
+        <div className="flex justify-between gap-10">
+          <figure className="w-[590px] h-[885px] bg-slate-500">
+            <Image src="/" alt="" width={590} height={885} />
+          </figure>
+          <div className="flex flex-col gap-5">
+            <div className="flex flex-col gap-3">
+              <h2 className="text-[24px] font-medium">
+                Pouch Pocket Hoodie Orange
+              </h2>
+              <h2 className="font-bold text-[16px]">Rp. 150.000</h2>
+              <p className="text-[13px]">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+            </div>
+
+            <div className="flex flex-col gap-3">
+              <h3>Size</h3>
+              <div className="flex flex-wrap">
+                {size.map((v: any, i: number) => (
+                  <button
+                    key={v.id}
+                    className="border-[1px] h-[50px] w-[120px] mr-3 focus:bg-red-500 rounded-sm focus:text-white duration-200 ease-out"
+                  >
+                    {v.name}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-3">
+              <h3>Type</h3>
+              <div className="flex flex-wrap">
+                {type.map((v: any, i: number) => (
+                  <button
+                    key={v.id}
+                    className="border-[1px] h-[50px] w-[120px] mr-3 focus:bg-red-500 rounded-sm focus:text-white duration-200 ease-out"
+                  >
+                    {v.name}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div className="flex gap-5 mt-10">
+              <div className="flex gap-3 border-[1px] h-[50px] w-[120px] items-center justify-between px-5 ">
+                <button
+                  className="font-bold text-[20px]"
+                  onClick={(e) => {
+                    decrement(e);
+                  }}
+                >
+                  -
+                </button>
+                <span>{count == 0 ? "0" : count}</span>
+                <button
+                  className="font-bold text-[20px]"
+                  onClick={(e) => {
+                    increment(e);
+                  }}
+                >
+                  +
+                </button>
+                {/* <span>{count != 0 && count}</span> */}
+              </div>
+              <button className="h-[50px] w-[200px] rounded-md bg-black text-white ">
+                Add to cart
+              </button>
+              <button className="h-[50px] w-full rounded-md bg-red-500 text-white">
+                Buy Now
+              </button>
+            </div>
+
+            <div className="flex gap-5 border-b-[1px] py-6">
+              <h3>Size Guide</h3>
+              <h3>Add to whishlish</h3>
+              <h3>Share this product</h3>
+            </div>
+          </div>
+        </div>
+        <div>deskripsi</div>
+      </section>
     </>
   );
 };
