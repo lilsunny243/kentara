@@ -4,6 +4,8 @@ import Header from "@/components/organisms/Header";
 import MainSlider from "@/components/organisms/MainSlider";
 import FeaturedProducts from "@/components/organisms/FeaturedProducts";
 import NewCollection from "@/components/organisms/NewCollection";
+import FeaturedCollection from "@/components/organisms/FeaturedCollection";
+import Footer from "@/components/organisms/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,6 +23,8 @@ export default function Home() {
         <MainSlider />
         <FeaturedProducts />
         <NewCollection />
+        <FeaturedCollection />
+        <Footer />
       </section>
     </>
   );

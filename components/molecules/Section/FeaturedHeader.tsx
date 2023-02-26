@@ -1,7 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-type Props = {};
+type Props = {
+  
+};
 
 const FeaturedHeader = (props: Props) => {
   return (
